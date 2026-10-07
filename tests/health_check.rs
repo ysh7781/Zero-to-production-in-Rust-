@@ -53,7 +53,7 @@ async fn subcribe_return_400_for_unvalid_data() {
 
     for (invalid_body, error_message) in test_cases {
         let response = req
-            .post(format!("{}/subscriptions", &app_address))
+            .post(&format!("{}/subscriptions", &app_address))
             .header("Content-Type", "application/x-www-form-urlencoded")
             .body(invalid_body)
             .send()
